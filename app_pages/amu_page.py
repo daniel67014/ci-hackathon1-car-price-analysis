@@ -6,7 +6,7 @@ def amu_page():
     df = pd.read_csv("Data/KaggleCarArchive/CarPrice_Working.csv")
 
     st.title("This is Amu's page")
-    st.write("This is Amu's page of the multipage app!")
+    st.write("This is Amu's page of the MAD Ken Dash app!")
 
     fig = px.box(df, x="drivewheel", y="horsepower", color="drivewheel",
                 title="Horsepower Distribution by Drivewheel Type")
