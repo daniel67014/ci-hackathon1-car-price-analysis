@@ -17,10 +17,6 @@ def load_data():
 
 df = load_data()
 
-
-#st.title("This is Amu's page")
-#st.write("This is Amu's page of the multipage app!")
-
 st.title("🚘 Amu's Car Analysis Page")
 st.markdown("""
 Welcome to **Amu's interactive analysis page**!  
