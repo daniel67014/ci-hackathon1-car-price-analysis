@@ -3,7 +3,7 @@ import plotly.express as px
 import pandas as pd
 
 def amu_page():
-    df = pd.read_csv("Data/KaggleCarArchive/CarPrice_Working.csv")
+    df = st.session_state.df
 
     st.title("This is Amu's page")
     st.write("This is Amu's page of the MAD Ken Dash app!")
