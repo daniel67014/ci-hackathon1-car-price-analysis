@@ -13,11 +13,22 @@ def PriceVsBrand():
     brand_list = df_byBrand['carBrand'].tolist()
     selected_brand = st.selectbox("Select a brand to view price distribution (or leave blank for main chart):", [""] + brand_list)
 
+    # Standardize histogram bins and range
+    price_min = int(df_CarPriceCSV['price'].min())
+    price_max = int(df_CarPriceCSV['price'].max())
+    nbins = 20  # or any fixed number you prefer
+
     if selected_brand:
         # Show histogram for selected brand
         st.subheader(f"Price Distribution for {selected_brand}")
         brand_prices = df_CarPriceCSV[df_CarPriceCSV['carBrand'] == selected_brand]['price']
-        fig_hist = px.histogram(brand_prices, nbins=20, labels={'value': 'Price'}, title=f'Price Distribution for {selected_brand}')
+        fig_hist = px.histogram(
+            brand_prices,
+            nbins=nbins,
+            range_x=[price_min, price_max],
+            labels={'value': 'Price'},
+            title=f'Price Distribution for {selected_brand}'
+        )
         st.plotly_chart(fig_hist)
         if st.button("Back to main chart"):
             st.experimental_rerun()
@@ -29,7 +40,8 @@ def PriceVsBrand():
             y='carBrand',
             orientation='h',
             labels={'price': 'Average Price', 'carBrand': 'Car Brand'},
-            title='Average Car Price by Brand'
+            title='Average Car Price by Brand',
+            height=560  # Increase height for more space
         )
         st.plotly_chart(fig_bar)
 
