@@ -18,5 +18,5 @@ def Price_vs_Enginesize():
     plt.tight_layout()
     st.pyplot(plt)
 
-
-
+    # Display an image related to car prices
+    st.image("images/engine_price.jpg", caption="Car price analysis", use_container_width=True)
