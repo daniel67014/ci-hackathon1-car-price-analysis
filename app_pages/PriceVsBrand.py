@@ -6,7 +6,7 @@ df_byBrand = df_CarPriceCSV[['carBrand', 'price']].groupby('carBrand').mean().as
 df_byBrand = df_byBrand.sort_values(by='price', ascending=False)
 
 def PriceVsBrand():
-    st.title("Price vs Brand Analysis")
+    st.title("Price vs Brand Analysis📊")
     st.write("Here we will analyze how car prices vary across different brands.")
 
     # Brand selection

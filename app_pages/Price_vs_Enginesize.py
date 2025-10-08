@@ -6,8 +6,7 @@ import matplotlib.pyplot as plt
 df_CarPriceCSV = st.session_state.df
 
 def Price_vs_Enginesize():
-    st.title("Page 1")
-    st.write("Welcome to Page 1 of the multipage app!")
+    st.write("Welcome to the Price vs Engine Size analysis page!")
     
     # Create a scatter plot visualization for Engine Size vs Price
     plt.figure(figsize=(10, 6))
