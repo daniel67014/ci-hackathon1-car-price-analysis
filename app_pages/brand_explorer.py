@@ -6,12 +6,13 @@ import os
 
 def brand_explorer():
 
-    col1, col2 = st.columns(2)
+    
     # Load dataset from session state
     df_CarPriceCSV = st.session_state.df
     df_CarPriceCSV['count'] = 1
 
     st.title("🚗 Car Brand Explorer")
+
 
     # Aggregate brand-model counts
     brand_model_data = df_CarPriceCSV.groupby(['carBrand', 'carModel'], as_index=False)['count'].sum()
@@ -27,6 +28,8 @@ def brand_explorer():
         st.subheader("Car Brands Overview")
     else:
         st.subheader(f"{selected_brand} Models Breakdown")
+
+    col1, col2 = st.columns(2)
 
     with col1:
 
