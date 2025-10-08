@@ -9,9 +9,9 @@ def Price_vs_Enginesize():
     st.title("Page 1")
     st.write("Welcome to Page 1 of the multipage app!")
     
-    # Create a bar chart visualization for Engine Size vs Price
+    # Create a scatter plot visualization for Engine Size vs Price
     plt.figure(figsize=(10, 6))
-    plt.bar(df_CarPriceCSV['enginesize'], df_CarPriceCSV['price'], color='blue')
+    plt.scatter(df_CarPriceCSV['enginesize'], df_CarPriceCSV['price'], color='blue')
     plt.xlabel('Engine Size')
     plt.ylabel('Price')
     plt.title('Engine Size vs Price')
