@@ -47,8 +47,9 @@
 ## Dashboard Design
 * **Home Page:** Project overview and navigation.
 * **Price vs Brand:** Horizontal bar chart of average price by brand; dropdown to select brand for histogram.
-* **Price vs Engine Size:** Scatter plot and regression line.
-* **Additional Pages:** Team member analysis pages.
+* **Price vs. Enginesize:** Scatter plot and regression line.
+* **Horsepower Distribution:** Analysis of horsepower data.
+* **Brand Explorer:** Interactive exploration of brands.
 * Data insights are communicated using clear visualizations and concise text, suitable for both technical and non-technical audiences.
 
 ## Unfixed Bugs
