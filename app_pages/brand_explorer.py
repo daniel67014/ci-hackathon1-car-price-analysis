@@ -3,7 +3,7 @@ import plotly.express as px
 import pandas as pd
 import os
 
-def dan_page():
+def brand_explorer():
     # Load dataset with validation
     csv_path = 'Data/KaggleCarArchive/CarPrice_Working.csv'
     if not os.path.exists(csv_path):
