@@ -45,4 +45,6 @@ def PriceVsBrand():
         )
         st.plotly_chart(fig_bar)
 
+        st.image("images/panda_rain.jpg", caption="Price vs. brand analysis", use_container_width=True)
+
 
