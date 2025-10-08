@@ -26,7 +26,7 @@ def amu_page():
 
     st.subheader("📊 Horsepower Distribution by Drivewheel Type")
 
-    fig = px.box(df, x="drivewheel", y="horsepower", color="drivewheel",
+    fig = px.box(filtered_df, x="drivewheel", y="horsepower", color="drivewheel",
                 title="Horsepower Distribution by Drivewheel Type")
     #fig.show()
 
