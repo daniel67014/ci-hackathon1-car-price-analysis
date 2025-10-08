@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-df_CarPriceCSV = pd.read_csv(r'Data\KaggleCarArchive\CarPrice_Working.csv')
+df_CarPriceCSV = pd.read_csv('Data/KaggleCarArchive/CarPrice_Working.csv')
 
 def Price_vs_Enginesize():
     st.title("Page 1")
