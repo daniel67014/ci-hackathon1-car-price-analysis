@@ -1,12 +1,10 @@
 import streamlit as st
 import app_pages.multi_page as mp
 import pandas as pd
-
-import os
-
+#import os
 
 if "df" not in st.session_state:
-    current_file_path = os.path.abspath(__file__)
+#    current_file_path = os.path.abspath(__file__)
     st.session_state.df = pd.read_csv('Data/KaggleCarArchive/CarPrice_Working.csv')
 
 from app_pages.PriceVsBrand import PriceVsBrand
