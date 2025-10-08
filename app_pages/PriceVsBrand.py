@@ -18,33 +18,35 @@ def PriceVsBrand():
     price_max = int(df_CarPriceCSV['price'].max())
     nbins = 20  # or any fixed number you prefer
 
-    if selected_brand:
-        # Show histogram for selected brand
-        st.subheader(f"Price Distribution for {selected_brand}")
-        brand_prices = df_CarPriceCSV[df_CarPriceCSV['carBrand'] == selected_brand]['price']
-        fig_hist = px.histogram(
-            brand_prices,
-            nbins=nbins,
-            range_x=[price_min, price_max],
-            labels={'value': 'Price'},
-            title=f'Price Distribution for {selected_brand}'
-        )
-        st.plotly_chart(fig_hist)
-        if st.button("Back to main chart"):
-            st.experimental_rerun()
-    else:
-        # Show main horizontal bar chart
-        fig_bar = px.bar(
-            df_byBrand,
-            x='price',
-            y='carBrand',
-            orientation='h',
-            labels={'price': 'Average Price', 'carBrand': 'Car Brand'},
-            title='Average Car Price by Brand',
-            height=560  # Increase height for more space
-        )
-        st.plotly_chart(fig_bar)
-
+    col1, col2 = st.columns([3, 1])
+    with col1:
+        if selected_brand:
+            # Show histogram for selected brand
+            st.subheader(f"Price Distribution for {selected_brand}")
+            brand_prices = df_CarPriceCSV[df_CarPriceCSV['carBrand'] == selected_brand]['price']
+            fig_hist = px.histogram(
+                brand_prices,
+                nbins=nbins,
+                range_x=[price_min, price_max],
+                labels={'value': 'Price'},
+                title=f'Price Distribution for {selected_brand}'
+            )
+            st.plotly_chart(fig_hist)
+            if st.button("Back to main chart"):
+                st.experimental_rerun()
+        else:
+            # Show main horizontal bar chart
+            fig_bar = px.bar(
+                df_byBrand,
+                x='price',
+                y='carBrand',
+                orientation='h',
+                labels={'price': 'Average Price', 'carBrand': 'Car Brand'},
+                title='Average Car Price by Brand',
+                height=560  # Increase height for more space
+            )
+            st.plotly_chart(fig_bar)
+    with col2:
         st.image("images/panda_rain.jpg", caption="Price vs. brand analysis", use_container_width=True)
 
 
