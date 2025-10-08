@@ -8,14 +8,7 @@ st.set_page_config(
     layout="wide"
 )
 
-@st.cache_data
-def load_data():
-    df = pd.read_csv(
-        "C:\\Users\\admin\\Documents\\vscode-projects\\ci-hackaton1-car-price-analysis\\ci-hackathon1-car-price-analysis\\Data\\KaggleCarArchive\\CarPrice_Working.csv"
-    )
-    return df
-
-df = load_data()
+df = st.session_state.df
 
 st.title("🚘 Amu's Car Analysis Page")
 st.markdown("""
@@ -45,3 +38,4 @@ st.plotly_chart(fig, use_container_width=True)
 
 with st.expander("🔍 View Raw Data"):
     st.dataframe(filtered_df)
+
