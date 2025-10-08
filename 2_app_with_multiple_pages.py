@@ -8,14 +8,14 @@ if "df" not in st.session_state:
     st.session_state.df = pd.read_csv('Data/KaggleCarArchive/CarPrice_Working.csv')
 
 from app_pages.PriceVsBrand import PriceVsBrand
-from app_pages.Price_vs_Enginesize import Price_vs_Enginesize
+from app_pages.PricevsEnginesize import Price_vs_Enginesize
 from app_pages.amu_page import amu_page
 from app_pages.dan_page import dan_page
 
 app = mp.Multipage("MAD Ken Dash - Car Price Analysis")
 
 app.add_page("Price vs Brand", PriceVsBrand)
-app.add_page("Price_vs_Enginesize", Price_vs_Enginesize)
+app.add_page("PricevsEnginesize", PricevsEnginesize)
 app.add_page("amu", amu_page)
 app.add_page("dan", dan_page)
 
