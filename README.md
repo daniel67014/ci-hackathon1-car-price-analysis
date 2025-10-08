@@ -1,72 +1,84 @@
+# Project Car Price Analysis by Team MADKen
+
+**Project Car Price Analysis** is a comprehensive data analysis dashboard for car price analysis, enabling users to explore, analyze, and visualize car price data interactively. The dashboard is built with Streamlit and supports CSV data input, providing an intuitive interface.
+
 # ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-## Template Instructions
+## Dataset Content
+* The dataset contains car listings with features such as brand, model, engine size, and price. It is sourced from Kaggle and is well within the repository's maximum size of 100Gb.
 
-Welcome,
+## Business Requirements
+* Enable users to compare average car prices by brand.
+* Allow exploration of price distributions for individual brands.
+* Provide insights into how engine size affects car price.
+* Support interactive data exploration for business decision-making.
 
-This is the Code Institute student template for the Data Analytics capstone project. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
+## Hypothesis and how to validate?
+* Hypothesis 1: Certain car brands have consistently higher average prices.
+  * Validation: Visualize average price by brand using horizontal bar charts.
+* Hypothesis 2: Engine size is positively correlated with car price.
+  * Validation: Scatter plot and regression analysis of engine size vs. price.
+* Hypothesis 3: Price distributions vary significantly between brands.
+  * Validation: Display histograms for selected brands.
 
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
+## Project Plan
+* Data collection from Kaggle.
+* Data cleaning and preprocessing in Jupyter notebooks.
+* Exploratory analysis and feature engineering.
+* Dashboard development in Streamlit.
+* Iterative testing and refinement based on feedback.
 
-## How to use this repo
+## The rationale to map the business requirements to the Data Visualisations
+* Average price by brand → Horizontal bar chart for clear comparison.
+* Price distribution per brand → Histogram for selected brand.
+* Engine size vs. price → Scatter plot for correlation analysis.
 
-1. Use this template to create your GitHub project repo. Click the **Use this template** button, then click **Create a new repository**.
+## Analysis techniques used
+* Groupby and aggregation for summary statistics.
+* Value counts and histograms for distribution analysis.
+* Scatter plots and regression for correlation.
+* Used generative AI tools (GitHub Copilot) for code suggestions, design thinking, and optimization.
 
-1. Copy the URL of your repository to your clipboard.
+## Ethical considerations
+* The dataset does not contain personal or sensitive information.
+* Bias may exist in the dataset due to market representation; addressed by transparent reporting.
+* No legal or societal issues identified.
 
-1. In VS Code, select **File** -> **Open Folder**.
+## Dashboard Design
+* **Home Page:** Project overview and navigation.
+* **Price vs Brand:** Horizontal bar chart of average price by brand; dropdown to select brand for histogram.
+* **Price vs Engine Size:** Scatter plot and regression line.
+* **Additional Pages:** Team member analysis pages.
+* Data insights are communicated using clear visualizations and concise text, suitable for both technical and non-technical audiences.
 
-1. Select your `vscode-projects` folder, then click the **Select Folder** button on Windows, or the **Open** button on Mac.
+## Unfixed Bugs
+* No major unfixed bugs. Minor limitations include:
+  * Streamlit does not support direct click events on Plotly charts.
+  * Some brand names may be truncated if the chart height is not sufficiently increased.
+* Feedback from peers led to improved chart sizing and widget selection.
 
-1. From the top menu in VS Code, select **Terminal** > **New Terminal** to open the terminal.
+## Development Roadmap
+* Challenges included handling categorical data and ensuring consistent visualization sizing.
+* Strategies: Used session state for data sharing, standardized histogram bins/range, and increased chart height.
+* Next steps: Explore advanced interactivity (e.g., Dash callbacks), learn more about deployment and scaling Streamlit apps.
 
-1. In the terminal, type `git clone` followed by the URL of your GitHub repository. Then hit **Enter**. This command will download all the files in your GitHub repository into your vscode-projects folder.
+## Main Data Analysis Libraries
+* **pandas:** Data loading, cleaning, and aggregation.
+  * Example: `df = pd.read_csv('CarPrice_Working.csv')`
+* **numpy:** Numerical operations.
+* **plotly:** Interactive visualizations.
+  * Example: `px.bar(df_byBrand, x='price', y='carBrand', orientation='h')`
+* **streamlit:** Dashboard interface and widgets.
 
-1. In VS Code, select **File** > **Open Folder** again.
+## Credits 
 
-1. This time, navigate to and select the folder for the project you just downloaded. Then, click **Select Folder**.
+### Content 
+- Data cleaning steps adapted from Kaggle tutorials.
+- Widget usage and dashboard layout inspired by Streamlit documentation.
 
-1. A virtual environment is necessary when working with Python projects to ensure each project's dependencies are kept separate from each other. You need to create your virtual environment, also called a venv, and then ensure that it is activated any time you return to your workspace.
-Click the gear icon in the lower left-hand corner of the screen to open the Manage menu and select **Command Palette** to open the VS Code command palette.
+### Media
+- CI logo from Code Institute.
+- Example images from open-source image repositories.
 
-1. In the command palette, type: *create environment* and select **Python: Create Environment…**
-
-1. Choose **Venv** from the dropdown list.
-
-1. Choose the Python version you installed earlier. Currently, we recommend Python 3.12.8
-
-1. **DO NOT** click the box next to `requirements.txt`, as you need to do more steps before you can install your dependencies. Click **OK**.
-
-1. You will see a `.venv` folder appear in the file explorer pane to show that the virtual environment has been created.
-
-1. **Important**: Note that the `.venv` folder is in the `.gitignore` file so that Git won't track it.
-
-1. Return to the terminal by clicking on the TERMINAL tab, or click on the **Terminal** menu and choose **New Terminal** if no terminal is currently open.
-
-1. In the terminal, use the command below to install your dependencies. This may take several minutes.
-
- ```console
- pip3 install -r requirements.txt
- ```
-
-1. Open the `jupyter_notebooks` directory, and click on the notebook you want to open.
-
-1. Click the **kernel** button and choose **Python Environments**.
-
-Note that the kernel says `Python 3.12.8` as it inherits from the venv, so it will be Python-3.12.8 if that is what is installed on your PC. To confirm this, you can use the command below in a notebook code cell.
-
-```console
-! python --version
-```
-
-## Deployment Reminders
-
-* Set the `.python-version` Python version to a [Heroku-22](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version that closest matches what you used in this project.
-* The project can be deployed to Heroku using the following steps.
-
-1. Log in to Heroku and create an App
-2. At the **Deploy** tab, select **GitHub** as the deployment method.
-3. Select your repository name and click **Search**. Once it is found, click **Connect**.
-4. Select the branch you want to deploy, then click **Deploy Branch**.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button **Open App** at the top of the page to access your App.
-6. If the slug size is too large, then add large files not required for the app to the `.slugignore` file.
+## Acknowledgements (optional)
+* Thanks to Code Institute instructors and peers for feedback and support.
