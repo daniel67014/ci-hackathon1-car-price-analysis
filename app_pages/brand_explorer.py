@@ -29,7 +29,8 @@ def brand_explorer():
     else:
         st.subheader(f"{selected_brand} Models Breakdown")
 
-    col1, col2 = st.columns(2)
+    # Layout: two columns for charts and image
+    col1, col2 = st.columns([2, 1])
 
     with col1:
 
