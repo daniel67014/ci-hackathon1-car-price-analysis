@@ -3,11 +3,6 @@ import plotly.express as px
 import pandas as pd
 
 def amu_page():
-    st.set_page_config(
-        page_title="Amu's Car Analysis",
-        page_icon="🚗",
-        layout="wide"
-    )
 
     df = st.session_state.df
 
