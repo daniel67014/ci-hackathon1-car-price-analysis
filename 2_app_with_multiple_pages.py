@@ -7,6 +7,7 @@ if "df" not in st.session_state:
 #    current_file_path = os.path.abspath(__file__)
     st.session_state.df = pd.read_csv('Data/KaggleCarArchive/CarPrice_Working.csv')
 
+from app_pages.main_page import main_page
 from app_pages.PriceVsBrand import PriceVsBrand
 from app_pages.Price_vs_Enginesize import Price_vs_Enginesize
 from app_pages.amu_page import amu_page
@@ -14,6 +15,7 @@ from app_pages.brand_explorer import brand_explorer
 
 app = mp.Multipage("MAD Ken Dash - Car Price Analysis")
 
+app.add_page("Car Price Analysis", main_page)
 app.add_page("Price vs Brand", PriceVsBrand)
 app.add_page("Price vs. Enginesize", Price_vs_Enginesize)
 app.add_page("Horsepower Distribution", amu_page)

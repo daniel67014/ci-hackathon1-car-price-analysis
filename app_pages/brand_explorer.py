@@ -41,3 +41,6 @@ def brand_explorer():
         else:
             model_fig = px.pie(model_data, names='carModel', values='count', title=f"{selected_brand} Models")
             st.plotly_chart(model_fig, use_container_width=True)
+
+    # Display brand distribution image
+    st.image("images/panda_pie.jpg", caption="Brand distribution", use_container_width=True)
