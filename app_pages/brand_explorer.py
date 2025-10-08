@@ -4,13 +4,8 @@ import pandas as pd
 import os
 
 def brand_explorer():
-    # Load dataset with validation
-    csv_path = 'Data/KaggleCarArchive/CarPrice_Working.csv'
-    if not os.path.exists(csv_path):
-        st.error(f"CSV file not found at: {csv_path}")
-        return
-
-    df_CarPriceCSV = pd.read_csv(csv_path)
+    # Load dataset from session state
+    df_CarPriceCSV = st.session_state.df
     df_CarPriceCSV['count'] = 1
 
     st.title("🚗 Car Brand Explorer")

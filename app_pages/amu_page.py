@@ -47,3 +47,4 @@ def amu_page():
     with st.expander("🔍 View Raw Data"):
         st.dataframe(filtered_df)
 
+    st.image("images/horse_and_panda.jpg", caption="Horsepower distribution", use_container_width=True)
